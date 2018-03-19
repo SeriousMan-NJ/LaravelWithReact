@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { fetchPostList } from './actions'
 import { Link } from 'react-router-dom'
 
-import { Grid, GridColumn as Column } from '@progress/kendo-react-grid'
+// import { Grid, GridColumn as Column } from '@progress/kendo-react-grid'
 
 function mapStateToProps(state) {
   const { postList } = state
@@ -31,20 +31,11 @@ class PostList extends Component {
         }
         content={postList.length > 0 &&
           <div>
-            <h2>요약 보기</h2>
-            <Grid
-              style={{ maxHeight: '400px' }}
-              data={postList}
-            >
-              <Column field="title" title="ID" width="100px" />
-              <Column field="content" title="Name" width="250px" />
-            </Grid>
-            <h2>자세히 보기</h2>
             {postList.map((p) => {
               return (
-                <div key={p.id} style={{paddingBottom: '2em'}}>
-                  <h4>{p.title}</h4>
-                  <div dangerouslySetInnerHTML={{__html: p.content}} />
+                <div key={p.id}>
+                  <h3>{p.title}</h3>
+                  <p>{p.content}</p>
                 </div>
               )
             })}

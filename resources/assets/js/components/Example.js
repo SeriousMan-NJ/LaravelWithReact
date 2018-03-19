@@ -4,21 +4,21 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import thunkMiddleware from 'redux-thunk'
-import { createLogger } from 'redux-logger'
+// import { createLogger } from 'redux-logger'
 
-import '@progress/kendo-theme-default/dist/all.css' // Kendo default theme
+// import '@progress/kendo-theme-default/dist/all.css' // Kendo default theme
 
 import rootReducer from '../reducers'
 import App from './App'
 import PostList from '../scenes/PostList'
 
-const loggerMiddleware = createLogger()
+// const loggerMiddleware = createLogger()
 
 const store = createStore(
   rootReducer,
   applyMiddleware(
     thunkMiddleware,
-    loggerMiddleware
+    // loggerMiddleware
   )
 )
 
